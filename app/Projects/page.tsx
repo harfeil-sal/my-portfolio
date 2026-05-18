@@ -1,0 +1,207 @@
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import TopNavigation from '../Components/Navigations/TopNavigation';
+import SideNavigation from '../Components/Navigations/SideNavigation';
+
+export default function Projects() {
+  const projects = [
+    {
+      title: "SRxAffinity",
+      desc: "An AI-powered recommendation system for personalized product suggestions and upsell opportunities.",
+      tags: ["React Native", ".NET", "Sybase"],
+      image: "/srxaffinity.png",
+      active: true,
+      id: "01"
+    },
+    {
+      title: "SRxAssist",
+      desc: "Custom low-level networking protocol optimized for ultra-low latency data transmission in high-frequency trading systems.",
+      tags: ["C++", "Go", "Docker"],
+      image: "/srxassist.png",
+      active: true,
+      id: "02"
+    },
+    {
+      title: "SRxLogistics",
+      desc: "End-to-end encrypted storage solution using zero-knowledge proofs for distributed team collaboration and secure data sharing.",
+      tags: ["TypeScript", "PostgreSQL", "Redis"],
+      image: "/srxlogistics.png",
+      active: true,
+      id: "03"
+    },
+    // {
+    //   title: "Geo-Traffic Engine",
+    //   desc: "Real-time geospatial processing engine for urban planning simulations and traffic flow optimization in smart city initiatives.",
+    //   tags: ["Python", "WebGL", "K8s"],
+    //   image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    //   active: false,
+    //   id: "04"
+    // },
+    // {
+    //   title: "Quantum Simulator",
+    //   desc: "A high-fidelity simulator for quantum circuit design and error correction algorithms in sub-atomic environments.",
+    //   tags: ["Julia", "Wasm", "Three.js"],
+    //   image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800",
+    //   active: false,
+    //   id: "05"
+    // },
+    // {
+    //   title: "OmniStack Cloud",
+    //   desc: "Self-healing infrastructure-as-code platform for automated multi-cloud deployment and cost management optimizations.",
+    //   tags: ["Terraform", "React", "AWS"],
+    //   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    //   active: false,
+    //   id: "06"
+    // }
+  ];
+
+  return (
+    <div className="min-h-screen bg-surface font-sans selection:bg-primary/30 text-on-surface">
+      {/* 1. Fixed Top Navigation */}
+      {/* <nav className="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30">
+        <div className="flex justify-between items-center px-12 py-4 max-w-[1440px] mx-auto">
+          <div className="font-mono text-lg font-bold tracking-tighter text-secondary">SOFTWARE ENGINEER</div>
+          <div className="flex gap-8 items-center">
+            <div className="flex gap-8">
+              <Link href="/" className="text-on-surface-variant hover:text-primary transition-colors">Home</Link>
+              <Link href="/Projects" className="text-primary border-b-2 border-primary pb-1 font-medium">Projects</Link>
+              <Link href="/Experience" className="text-on-surface-variant hover:text-primary transition-colors">Experience</Link>
+              <Link href="/Contact" className="text-on-surface-variant hover:text-primary transition-colors">Contact</Link>
+            </div>
+            <div className="flex items-center gap-4 border-l border-outline-variant/30 pl-8 text-on-surface-variant">
+               <span className="material-symbols-outlined hover:text-primary cursor-pointer text-sm">code</span>
+               <span className="material-symbols-outlined hover:text-primary cursor-pointer text-sm">terminal</span>
+               <button className="bg-primary text-on-primary px-5 py-2 rounded-md font-medium hover:brightness-110 transition-all shadow-lg shadow-primary/20 ml-2">
+                Resume
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav> */}
+
+      <TopNavigation activePage="projects" />
+
+      {/* 2. Main Layout Shell */}
+      <div className="flex pt-24 max-w-[1440px] mx-auto min-h-screen">
+        
+        {/* Persistent Sidebar */}
+        {/* <aside className="w-80 hidden lg:flex flex-col border-r border-outline-variant/20 sticky top-24 h-[calc(100vh-6rem)] p-8">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-14 h-14 rounded-xl bg-surface-bright overflow-hidden border border-outline-variant ring-4 ring-surface-container-low">
+              <Image
+                src="/my_profile_pic.png"
+                alt="Harfeil Salmeron"
+                width={56}
+                height={56}
+                className="w-full h-full object-cover" 
+              />
+            </div>
+            <div>
+              <h3 className="font-bold text-on-surface">Jr. Software Engineer</h3>
+              <p className="text-[10px] font-mono text-on-surface-variant tracking-wider">v1.0.0-stable</p>
+            </div>
+          </div>
+          
+          <nav className="flex flex-col gap-1 mb-auto">
+            <Link href="/" className="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-lg">
+              <span className="material-symbols-outlined text-[20px]">home</span> Home
+            </Link>
+            <Link href="/Projects" className="flex items-center gap-4 px-4 py-3 bg-primary-container text-primary border-r-4 border-primary font-medium rounded-l-lg transition-all">
+              <span className="material-symbols-outlined text-[20px]">reorder</span> Projects
+            </Link>
+            <Link href="/Experience" className="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-lg">
+              <span className="material-symbols-outlined text-[20px]">work</span> Experience
+            </Link>
+            <Link href="/Contact" className="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-lg">
+              <span className="material-symbols-outlined text-[20px]">mail</span> Contact
+            </Link>
+          </nav>
+
+          <div className="space-y-4 pt-8 border-t border-outline-variant/10">
+            <button className="w-full py-4 bg-primary text-on-primary font-bold hover:brightness-110 transition-all rounded-xl shadow-lg shadow-primary/10">
+              Hire Me
+            </button>
+            <div className="flex justify-center gap-6 text-on-surface-variant">
+               <span className="material-symbols-outlined hover:text-primary cursor-pointer">javascript</span>
+               <span className="material-symbols-outlined hover:text-primary cursor-pointer">terminal</span>
+            </div>
+          </div>
+        </aside> */}
+        <SideNavigation activePage="projects" />
+
+        {/* 3. Content Area */}
+        <main className="flex-1 p-12 lg:p-20">
+          <header className="mb-16">
+            <h1 className="text-6xl font-bold tracking-tight mb-4">Projects Showcase</h1>
+            <div className="w-24 h-1 bg-primary mb-8" />
+            <p className="text-xl text-on-surface-variant max-w-3xl leading-relaxed">
+              A curated selection of complex system architectures, full-stack implementations, and performance-optimized digital solutions.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div 
+                key={project.id} 
+                className="group flex flex-col bg-surface-container-low rounded-[32px] border border-outline-variant/30 overflow-hidden hover:border-primary/50 hover:-translate-y-2 transition-all duration-300"
+              >
+                <div className="h-56 relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60" />
+                  {project.active && (
+                    <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-primary/90 text-[10px] font-bold text-on-primary tracking-widest uppercase backdrop-blur-sm">
+                      Active
+                    </div>
+                  )}
+                </div>
+                
+                <div className="p-8 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bold mb-4 text-on-surface group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                    {project.desc}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="px-2 py-1 rounded bg-surface-bright text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+                    <button className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
+                      <span className="material-symbols-outlined text-sm">open_in_new</span> LIVE DEMO
+                    </button>
+                    <button className="flex items-center gap-2 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-all">
+                      <span className="material-symbols-outlined text-sm">code</span> SOURCE CODE
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </main>
+      </div>
+
+      <footer className="border-t border-outline-variant/10 py-10 px-12 bg-surface-dim mt-20">
+        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-on-surface-variant font-mono text-sm">© 2025 System Architect. Built with precision.</p>
+          <div className="flex gap-10 text-on-surface-variant text-xs font-mono uppercase tracking-[0.2em]">
+            <Link href="#" className="hover:text-primary transition-colors">Documentation</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Status</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Source</Link>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
