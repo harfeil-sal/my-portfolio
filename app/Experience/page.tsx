@@ -41,6 +41,17 @@ export default function Experience() {
         "-Implemented a Web Services for Android Application using PHP and MySQL.",
         "-Developed a Android Application for a Retail Company using Basic for Android."
       ]
+    },
+    {
+      title: "Web Developer",
+      company: "Sr. Cecilia's College INC.",
+      period: "2024 - 2025",
+      icon: "code",
+      points: [
+        "-Implemented a Centralized Library Management System using Reactjs, Django, and MySQL.",
+        "-Integrated a arduino device for barcode scanning for inventory and RFID card reading upon entering the library.",
+        "-Implemented a Dewey Decimal System for book classification and searching."
+      ]
     }
   ];
 
@@ -49,7 +60,7 @@ export default function Experience() {
       name: "Frontend Core",
       icon: "html",
       color: "text-secondary",
-      skills: ["React Js","React Native", "CSS", "Material UI", "Javascript", "HTML", "Redux", "Context"]
+      skills: ["React Js", "Next Js", "React Native", "CSS", "Material UI", "Javascript", "HTML", "Redux", "Context"]
     },
     {
       name: "Backend Core",

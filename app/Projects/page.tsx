@@ -30,6 +30,14 @@ export default function Projects() {
       active: true,
       id: "03"
     },
+    {
+      title: "MyRx",
+      desc: "A mobile application for iOS and Android that improves communication between patients, pharmacies, and doctors. Enables convenient prescription refill management while helping pharmacies increase customer loyalty, improve medication adherence, and enhance overall operational efficiency.",
+      tags: ["React Native", ".NET", "Sybase"],
+      image: "/myrx.png",
+      active: true,
+      id: "03"
+    },
     // {
     //   title: "Geo-Traffic Engine",
     //   desc: "Real-time geospatial processing engine for urban planning simulations and traffic flow optimization in smart city initiatives.",
