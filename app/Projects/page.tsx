@@ -147,10 +147,12 @@ export default function Projects() {
                 className="group flex flex-col bg-surface-container-low rounded-[32px] border border-outline-variant/30 overflow-hidden hover:border-primary/50 hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="h-56 relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" 
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    className="object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60" />
                   {project.active && (
