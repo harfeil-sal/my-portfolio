@@ -8,7 +8,7 @@ export default function Projects() {
   const projects = [
     {
       title: "SRxAffinity",
-      desc: "An AI-powered recommendation system for personalized product suggestions and upsell opportunities.",
+      desc: "A business analytics and reporting platform that provides near real-time insights from SRx dispensing data for single and multi-site operations. Features customizable dashboards, filtering tools, and tailored reports to monitor workflows, billing, productivity, deliveries, staffing, and overall business performance. Designed to help businesses track trends, detect anomalies, and make data-driven operational decisions.",
       tags: ["React Native", ".NET", "Sybase"],
       image: "/srxaffinity.png",
       active: true,
@@ -16,16 +16,16 @@ export default function Projects() {
     },
     {
       title: "SRxAssist",
-      desc: "Custom low-level networking protocol optimized for ultra-low latency data transmission in high-frequency trading systems.",
-      tags: ["C++", "Go", "Docker"],
+      desc: "A mobile-enabled pharmacy operations platform that provides real-time access to essential information and workflow management across facilities. Seamlessly integrates with the SRx system to streamline pharmacy workflows, improve operational efficiency, and enable responsive service through mobility and instant access to critical data.",
+      tags: ["React Native", ".NET", "Sybase"],
       image: "/srxassist.png",
       active: true,
       id: "02"
     },
     {
       title: "SRxLogistics",
-      desc: "End-to-end encrypted storage solution using zero-knowledge proofs for distributed team collaboration and secure data sharing.",
-      tags: ["TypeScript", "PostgreSQL", "Redis"],
+      desc: "A mobile pharmacy logistics and inventory management application that uses barcode scanning to track drug supplies and monitor inventory in real time. Designed to improve inventory accuracy, streamline pharmacy logistics, and provide efficient stock monitoring across pharmacy operations.",
+      tags: ["React Native", ".NET", "Sybase"],
       image: "/srxlogistics.png",
       active: true,
       id: "03"
