@@ -13,7 +13,7 @@ export default function Projects() {
       image: "/srxaffinity.png",
       active: true,
       type: "Android",
-      downloadUrl: "/downloads/app-release.apk",
+      downloadUrl: "/downloads/app-release.zip",
       id: "01"
     },
     {
