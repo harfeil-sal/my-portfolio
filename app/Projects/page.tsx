@@ -12,6 +12,8 @@ export default function Projects() {
       tags: ["React Native", ".NET", "Sybase"],
       image: "/srxaffinity.png",
       active: true,
+      type: "Android",
+      downloadUrl: "/downloads/app-release.apk",
       id: "01"
     },
     {
@@ -20,6 +22,7 @@ export default function Projects() {
       tags: ["React Native", ".NET", "Sybase"],
       image: "/srxassist.png",
       active: true,
+      type: "Android",
       id: "02"
     },
     {
@@ -28,6 +31,7 @@ export default function Projects() {
       tags: ["React Native", ".NET", "Sybase"],
       image: "/srxlogistics.png",
       active: true,
+      type: "Android",
       id: "03"
     },
     {
@@ -36,6 +40,7 @@ export default function Projects() {
       tags: ["React Native", ".NET", "Sybase"],
       image: "/myrx.png",
       active: true,
+      type: "Android",
       id: "03"
     },
     // {
@@ -186,14 +191,24 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="flex justify-between items-center pt-6 border-t border-outline-variant/10">
-                    <button className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
+                  <div className="flex justify-between items-center pt-6 border-t border-outline-variant/10"> 
+                    {/* <button className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
                       <span className="material-symbols-outlined text-sm">open_in_new</span> LIVE DEMO
                     </button>
                     <button className="flex items-center gap-2 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-all">
                       <span className="material-symbols-outlined text-sm">code</span> SOURCE CODE
-                    </button>
-                  </div>
+                    </button> */}
+                    {project.type === "None" ? (
+                      <button className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
+                    </button>) : (
+                      <a href={project.downloadUrl || "#"}
+                      target="_blank"
+                      download 
+                      rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
+                      <span className="material-symbols-outlined text-sm">{project.type == "Android" ? "download" : "open_in_new"}</span> {project.type == "Android" ? "Download APK" : "View Website"}
+                    </a>
+                    )}
+                  </div> 
                 </div>
               </div>
             ))}

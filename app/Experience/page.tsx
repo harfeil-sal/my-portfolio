@@ -16,10 +16,12 @@ export default function Experience() {
       period: "2025 — PRESENT",
       icon: "dns",
       points: [
-        "Developed a Android Application for a Pharmacy using React Native.",
-        "Developed a Backend Services using .NET and Sybase.",
-        "Automated CI/CD pipelines using Github Actions.",
-        "Integrated a Claude Platform for Graph Analysis."
+        "Developed Android applications for pharmacy management using React Native.",
+        "Built Backend Services using .NET and Sybase.",
+        "Built Backend Services using Repository Pattern for better code organization and maintainability.",
+        "Automated CI/CD pipelines using GitHub Actions.",
+        "Integrated Claude platform API Key for graph analysis features.",
+        "Integrated Transafe API for payment processing."
       ]
     },
     // {
@@ -35,22 +37,26 @@ export default function Experience() {
     {
       title: "Software Developer (Internship)",
       company: "Ezware Services Corporation",
-      period: "2024 - 2025",
+      period: "2024 — 2025",
       icon: "code",
       points: [
-        "-Implemented a Web Services for Android Application using PHP and MySQL.",
-        "-Developed a Android Application for a Retail Company using Basic for Android."
+        "Developed backend services for a mobile retailing application using PHP and MySQL.",
+        "Ensured data integrity and efficient database design.",
+        "Collaborated with the frontend team using Basic for Android (B4A) to deliver a seamless mobile experience.",
+        "Gained hands-on experience in debugging, API integration."
       ]
     },
     {
       title: "Web Developer",
-      company: "Sr. Cecilia's College INC.",
-      period: "2024 - 2025",
+      company: "Sr. Cecilia's College Inc.",
+      period: "2024 — 2025",
       icon: "code",
       points: [
-        "-Implemented a Centralized Library Management System using Reactjs, Django, and MySQL.",
-        "-Integrated a arduino device for barcode scanning for inventory and RFID card reading upon entering the library.",
-        "-Implemented a Dewey Decimal System for book classification and searching."
+        "Developed a centralized Library Management System using React.js, Django, and MySQL.",
+        "Integrated Arduino devices for barcode scanning and RFID-based library entry monitoring.",
+        "Implemented the Dewey Decimal System for book classification and search functionality.",
+        "Deployed the application on DigitalOcean using Docker and Coolify, ensuring continuous availability and scalability.",
+        "Collaborated with teammates to plan, design, and deploy the system successfully."
       ]
     }
   ];

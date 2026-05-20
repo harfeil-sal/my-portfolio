@@ -5,11 +5,45 @@ import Link from 'next/link';
 import TopNavigation from '../Components/Navigations/TopNavigation';
 import SideNavigation from '../Components/Navigations/SideNavigation';
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+
 export default function Contact() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<FormStatus>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit() {
+    console.log('[contact] handleSubmit fired', { name, email, message });
+    setStatus('loading');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Something went wrong.');
+      }
+
+      setStatus('success');
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(err instanceof Error ? err.message : 'Failed to send message.');
+    }
+  }
 
   const systemNodes = [
-    { name: 'GitHub', icon: 'code', href: 'https://github.com/' },
+    { name: 'GitHub', icon: 'code', href: 'https://github.com/Harfeil' },
     { name: 'LinkedIn', icon: 'account_tree', href: 'https://linkedin.com/in/' },
     { name: 'Email Me Direct', icon: 'mail', href: 'mailto:harfeil.gequillo.salmeron@gmail.com' },
   ];
@@ -80,7 +114,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <form className="p-8 lg:p-12 space-y-8 ">
+              <form className="p-8 lg:p-12 space-y-8">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -91,8 +125,12 @@ export default function Contact() {
 
                     <input
                       type="text"
+                      required
                       placeholder="Enter your name"
-                      className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      disabled={status === 'loading'}
+                      className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all disabled:opacity-50"
                     />
                   </div>
 
@@ -103,8 +141,12 @@ export default function Contact() {
 
                     <input
                       type="email"
+                      required
                       placeholder="Enter your email"
-                      className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={status === 'loading'}
+                      className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -116,10 +158,29 @@ export default function Contact() {
 
                   <textarea
                     rows={6}
+                    required
                     placeholder="Type your message here..."
-                    className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all resize-none"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={status === 'loading'}
+                    className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all resize-none disabled:opacity-50"
                   />
                 </div>
+
+                {/* Success / Error feedback */}
+                {status === 'success' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-mono">
+                    <span className="material-symbols-outlined text-base">check_circle</span>
+                    Message transmitted successfully. I&apos;ll reply soon.
+                  </div>
+                )}
+
+                {status === 'error' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-mono">
+                    <span className="material-symbols-outlined text-base">error</span>
+                    {errorMsg}
+                  </div>
+                )}
 
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-4">
 
@@ -133,12 +194,14 @@ export default function Contact() {
 
                   <button
                     type="button"
-                    className="w-full sm:w-auto bg-blue-500 text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:brightness-110 transition-all shadow-xl shadow-blue-500/20 group"
+                    onClick={handleSubmit}
+                    disabled={status === 'loading' || status === 'success'}
+                    className="w-full sm:w-auto bg-blue-500 text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:brightness-110 transition-all shadow-xl shadow-blue-500/20 group disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {status === 'loading' ? 'Transmitting...' : status === 'success' ? 'Sent!' : 'Send Message'}
 
                     <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                      send
+                      {status === 'loading' ? 'hourglass_top' : status === 'success' ? 'check' : 'send'}
                     </span>
                   </button>
                 </div>
