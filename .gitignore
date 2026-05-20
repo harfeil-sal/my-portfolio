@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large binary downloads (host on GitHub Releases instead)
+public/downloads/*.apk
+public/downloads/*.zip
