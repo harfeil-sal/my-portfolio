@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TopNavigation from '../Components/Navigations/TopNavigation';
 import SideNavigation from '../Components/Navigations/SideNavigation';
+import Footer from '../Components/Footer/Footer';
 
 export default function Experience() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -265,16 +266,8 @@ export default function Experience() {
         </main>
       </div>
 
-      <footer className="border-t border-outline-variant/10 py-10 px-6 lg:px-12 bg-surface-dim">
-        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-on-surface-variant font-mono text-sm text-center md:text-left">© 2024 System Architect. Built with precision.</p>
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-10 text-on-surface-variant text-[10px] lg:text-xs font-mono uppercase tracking-[0.2em]">
-            <Link href="#" className="hover:text-primary transition-colors">Documentation</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Status</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Source</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
+        
     </div>
   );
 }

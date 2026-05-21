@@ -14,6 +14,7 @@ export default function TopNavigation({activePage}: {activePage: string}) {
           <div className="flex gap-8 items-center">
             <div className="flex gap-8">
               <Link href="/" className={` font-medium ${activePage === 'home' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant'}`}>Home</Link>
+              <Link href="/AboutMe" className={`text-on-surface-variant hover:text-primary transition-colors ${activePage === 'aboutMe' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant'}`}>About Me</Link>
               <Link href="/Projects" className={`text-on-surface-variant hover:text-primary transition-colors ${activePage === 'projects' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant'}`}>Projects</Link>
               <Link href="/Experience" className={`text-on-surface-variant hover:text-primary transition-colors ${activePage === 'experience' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant'}`}>Experience</Link>
               <Link href="/Contact" className={`text-on-surface-variant hover:text-primary transition-colors ${activePage === 'contact' ? 'text-primary border-b-2 border-primary pb-1' : 'text-on-surface-variant'}`}>Contact</Link>
@@ -35,6 +36,7 @@ export default function TopNavigation({activePage}: {activePage: string}) {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-surface-container-high border-b border-outline-variant/30 p-6 flex flex-col gap-4">
             <Link href="/" className="text-on-surface-variant">Home</Link>
+            <Link href="/AboutMe" className="text-on-surface-variant">About Me</Link>
             <Link href="/Projects" className="text-on-surface-variant">Projects</Link>
             <Link href="/Experience" className="text-primary font-bold">Experience</Link>
             <Link href="/Contact" className="text-on-surface-variant">Contact</Link>

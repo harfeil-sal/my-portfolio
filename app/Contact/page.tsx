@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import TopNavigation from '../Components/Navigations/TopNavigation';
 import SideNavigation from '../Components/Navigations/SideNavigation';
+import Footer from '../Components/Footer/Footer';
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
@@ -281,30 +282,7 @@ export default function Contact() {
       </div>
 
       {/* ================= FOOTER ================= */}
-      <footer className="border-t border-zinc-800 py-10 px-6 lg:px-12 bg-zinc-950">
-
-        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-
-          <p className="text-zinc-500 font-mono text-sm">
-            © 2024 System Architect. Built with precision.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-10 text-zinc-500 text-[10px] lg:text-xs font-mono uppercase tracking-[0.2em]">
-
-            <Link href="#" className="hover:text-blue-400 transition-colors">
-              Documentation
-            </Link>
-
-            <Link href="#" className="hover:text-blue-400 transition-colors">
-              Status
-            </Link>
-
-            <Link href="#" className="hover:text-blue-400 transition-colors">
-              Source
-            </Link>
-          </div>
-        </div>
-      </footer>
+        <Footer />
     </div>
   );
 }

@@ -3,80 +3,113 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TopNavigation from '../Components/Navigations/TopNavigation';
 import SideNavigation from '../Components/Navigations/SideNavigation';
+import Footer from '../Components/Footer/Footer';
+
+const featuredProjects = [
+  {
+    id: '01',
+    title: 'SRxAffinity',
+    description:
+      'Business analytics platform delivering near real-time insights from pharmacy dispensing data. Features customizable dashboards and tailored reports to monitor billing, productivity, staffing, and operational trends across single and multi-site operations.',
+    tags: ['React Native', '.NET', 'Sybase'],
+    demo: 'https://github.com/harfeil-sal/my-portfolio/releases/latest/download/app-release.zip',
+    github: '#',
+    status: 'Live',
+  },
+  {
+    id: '02',
+    title: 'SRxAssist',
+    description:
+      'Mobile pharmacy operations platform with real-time access to workflows and facility data. Integrates directly with the SRx system to streamline daily pharmacy operations and enable responsive service through instant mobile access.',
+    tags: ['React Native', '.NET', 'Sybase'],
+    demo: '#',
+    github: '#',
+    status: 'Live',
+  },
+  {
+    id: '03',
+    title: 'SRxLogistics',
+    description:
+      'Mobile inventory management app using barcode scanning to track drug supplies in real time. Built to improve stock accuracy and streamline logistics across pharmacy operations.',
+    tags: ['React Native', '.NET', 'Sybase'],
+    demo: '#',
+    github: '#',
+    status: 'Live',
+  },
+];
+
+const skills = [
+  {
+    id: '01',
+    title: 'Frontend Development',
+    icon: 'code',
+    tags: [
+      { name: 'React.js', level: 5 },
+      { name: 'Next.js', level: 5 },
+      { name: 'TypeScript', level: 4 },
+      { name: 'Tailwind CSS', level: 5 },
+      { name: 'JavaScript', level: 5 },
+      { name: 'React Native', level: 4 },
+      { name: 'Vue.js', level: 3 },
+      { name: 'HTML', level: 5 },
+      { name: 'CSS', level: 5 },
+    ],
+  },
+  {
+    id: '02',
+    title: 'Backend Development',
+    icon: 'database',
+    tags: [
+      { name: 'Node.js', level: 4 },
+      { name: 'Laravel', level: 4 },
+      { name: '.NET', level: 4 },
+      { name: 'Express', level: 4 },
+      { name: 'MySQL', level: 4 },
+      { name: 'MongoDB', level: 3 },
+      { name: 'Django', level: 3 },
+      { name: 'PHP', level: 4 },
+      { name: 'Sybase', level: 3 },
+    ],
+  },
+  {
+    id: '03',
+    title: 'Development Tools',
+    icon: 'build',
+    tags: [
+      { name: 'Git / GitHub', level: 5 },
+      { name: 'Docker', level: 3 },
+      { name: 'Figma', level: 4 },
+      { name: 'Postman', level: 5 },
+      { name: 'VS Code', level: 5 },
+      { name: 'Vercel', level: 4 },
+      { name: 'Expo', level: 4 },
+      { name: 'Redis', level: 3 },
+      { name: 'Claude Code', level: 4 },
+    ],
+  },
+];
+
+// Dot rating component
+const RatingDots = ({ level }: { level: number }) => (
+  <div className="flex gap-0.5">
+    {[1, 2, 3, 4, 5].map((i) => (
+      <span
+        key={i}
+        className={`w-1 h-1 rounded-full ${
+          i <= level ? 'bg-primary' : 'bg-outline-variant/30'
+        }`}
+      />
+    ))}
+  </div>
+);
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-surface font-sans selection:bg-primary/30 text-on-surface">
-      {/* 1. Fixed Top Navigation */}
-      {/* <nav className="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30">
-        <div className="flex justify-between items-center px-12 py-4 max-w-[1440px] mx-auto">
-          <div className="font-mono text-lg font-bold tracking-tighter text-secondary">SOFTWARE ENGINEER</div>
-          <div className="flex gap-8 items-center">
-            <div className="flex gap-8">
-              <Link href="/" className="text-primary border-b-2 border-primary pb-1 font-medium">Home</Link>
-              <Link href="/Projects" className="text-on-surface-variant hover:text-primary transition-colors">Projects</Link>
-              <Link href="/Experience" className="text-on-surface-variant hover:text-primary transition-colors">Experience</Link>
-              <Link href="/Contact" className="text-on-surface-variant hover:text-primary transition-colors">Contact</Link>
-            </div>
-            <div className="flex items-center gap-4 border-l border-outline-variant/30 pl-8 text-on-surface-variant">
-               <span className="material-symbols-outlined hover:text-primary cursor-pointer text-sm">code</span>
-               <span className="material-symbols-outlined hover:text-primary cursor-pointer text-sm">terminal</span>
-               <button className="bg-primary text-on-primary px-5 py-2 rounded-md font-medium hover:brightness-110 transition-all shadow-lg shadow-primary/20 ml-2">
-                Resume
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav> */}
       <TopNavigation activePage="home" />
 
       {/* 2. Main Layout Shell */}
       <div className="flex pt-24 max-w-[1440px] mx-auto min-h-screen">
-        
-        {/* Persistent Sidebar */}
-        {/* <aside className="w-80 hidden lg:flex flex-col border-r border-outline-variant/20 sticky top-24 h-[calc(100vh-6rem)] p-8">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-14 h-14 rounded-xl bg-surface-bright overflow-hidden border border-outline-variant ring-4 ring-surface-container-low">
-              <Image
-                src="/my_profile_pic.png"
-                alt="Harfeil Salmeron"
-                width={56}
-                height={56}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="font-bold text-on-surface">Jr. Software Engineer</h3>
-              <p className="text-[10px] font-mono text-on-surface-variant tracking-wider">v1.0.0-stable</p>
-            </div>
-          </div>
-          
-          <nav className="flex flex-col gap-1 mb-auto">
-            <Link href="/" className="flex items-center gap-4 px-4 py-3 bg-primary-container text-primary border-r-4 border-primary font-medium rounded-l-lg transition-all">
-              <span className="material-symbols-outlined text-[20px]">home</span> Home
-            </Link>
-            <Link href="/Projects" className="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-lg">
-              <span className="material-symbols-outlined text-[20px]">reorder</span> Projects
-            </Link>
-            <Link href="/Experience" className="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-lg">
-              <span className="material-symbols-outlined text-[20px]">work</span> Experience
-            </Link>
-            <Link href="/Contact" className="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-all rounded-lg">
-              <span className="material-symbols-outlined text-[20px]">mail</span> Contact
-            </Link>
-          </nav>
-
-          <div className="space-y-4 pt-8 border-t border-outline-variant/10">
-            <button className="w-full py-4 bg-primary text-on-primary font-bold hover:brightness-110 transition-all rounded-xl shadow-lg shadow-primary/10">
-              Hire Me
-            </button>
-            <div className="flex justify-center gap-6 text-on-surface-variant">
-               <span className="material-symbols-outlined hover:text-primary cursor-pointer">javascript</span>
-               <span className="material-symbols-outlined hover:text-primary cursor-pointer">terminal</span>
-            </div>
-          </div>
-        </aside> */}
-
         <SideNavigation activePage="home" />
 
         {/* 3. Content Area */}
@@ -105,27 +138,95 @@ export default function Home() {
             </div>
           </header>
 
-          <section className="space-y-12">
+          {/* Core Infrastructure */}
+          <section className="space-y-12 mb-20">
             <div className="flex items-center gap-4">
               <h2 className="text-3xl font-bold">Core Infrastructure</h2>
               <div className="flex-1 h-px bg-outline-variant/10" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { title: 'Frontend Development', icon: 'code', tags: ['React.js', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Vue.js', 'Javascript', 'HTML', 'CSS', 'React Native'], id: '01' },
-                { title: 'Backend Development', icon: 'database', tags: ['Node.js', '.NET', 'Django', 'Express', 'Laravel', 'PHP', 'MySQL', 'Sybase', 'MongoDB'], id: '02' },
-                { title: 'Development Tools', icon: 'build', tags: ['Github', 'Git', 'Docker', 'Vercel', 'Material UI', 'Redis', 'Figma', 'MS Office', 'Bootstrap', 'VS Code', 'Claude Code', 'Cursor', 'OpenAI', 'Claude Platform', 'Postman', 'Expo'], id: '03' }
-              ].map((skill) => (
-                <div key={skill.id} className="p-8 rounded-3xl bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 transition-all group">
+              {skills.map((skill) => (
+                <div
+                  key={skill.id}
+                  className="p-8 rounded-3xl bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 transition-all group"
+                >
                   <div className="flex justify-between items-start mb-8">
-                    <span className="material-symbols-outlined text-secondary text-3xl">{skill.icon}</span>
+                    <span className="material-symbols-outlined text-secondary text-3xl">
+                      {skill.icon}
+                    </span>
                     <span className="text-[10px] font-mono text-on-surface-variant">{skill.id}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{skill.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {skill.tags.map(tag => (
-                      <span key={tag} className="px-2 py-1 rounded bg-surface-bright text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">{tag}</span>
+                  <h3 className="text-xl font-bold mb-6">{skill.title}</h3>
+                  <div className="flex flex-col gap-3">
+                    {skill.tags.map((tag) => (
+                      <div key={tag.name} className="flex items-center justify-between">
+                        <span className="text-[11px] font-mono text-on-surface-variant uppercase tracking-wider">
+                          {tag.name}
+                        </span>
+                        <RatingDots level={tag.level} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── Featured Projects ── */}
+          <section className="space-y-12">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <h2 className="text-3xl font-bold">Featured Projects</h2>
+                <div className="flex-1 h-px bg-outline-variant/10 w-20" />
+              </div>
+              <Link
+                href="/Projects"
+                className="flex items-center gap-1 text-xs font-mono text-primary uppercase tracking-widest hover:brightness-125 transition-all"
+              >
+                View all <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featuredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="flex flex-col p-8 rounded-3xl bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 transition-all group"
+                >
+                  {/* Header row */}
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="text-[10px] font-mono text-on-surface-variant">{project.id}</span>
+                    <span
+                      className={`px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest border ${
+                        project.status === 'Live'
+                          ? 'border-secondary/40 text-secondary bg-secondary/10'
+                          : 'border-primary/40 text-primary bg-primary/10'
+                      }`}
+                    >
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-on-surface-variant leading-relaxed mb-6 flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 rounded bg-surface-bright text-[10px] font-mono text-on-surface-variant uppercase tracking-wider"
+                      >
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -135,16 +236,7 @@ export default function Home() {
         </main>
       </div>
 
-      <footer className="border-t border-outline-variant/10 py-10 px-12 bg-surface-dim">
-        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-on-surface-variant font-mono text-sm">© 2025 System Architect. Built with precision.</p>
-          <div className="flex gap-10 text-on-surface-variant text-xs font-mono uppercase tracking-[0.2em]">
-            <Link href="#" className="hover:text-primary transition-colors">Documentation</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Status</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Source</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

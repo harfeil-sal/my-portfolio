@@ -24,6 +24,9 @@ export default function SideNavigation({activePage}: {activePage: string}) {
             <Link href="/" className={`flex items-center gap-4 px-4 py-3 ${activePage === 'home' ? 'bg-primary-container text-primary border-r-4 border-primary' : 'text-on-surface-variant'} font-medium rounded-l-lg transition-all`}>
               <span className="material-symbols-outlined text-[20px]">home</span> Home
             </Link>
+            <Link href="/AboutMe" className={`flex items-center gap-4 px-4 py-3 ${activePage === 'aboutMe' ? 'bg-primary-container text-primary border-r-4 border-primary' : 'text-on-surface-variant'} font-medium rounded-l-lg transition-all`}>
+              <span className="material-symbols-outlined text-[20px]">person</span> About Me
+            </Link>
             <Link href="/Projects" className={`flex items-center gap-4 px-4 py-3 ${activePage === 'projects' ? 'bg-primary-container text-primary border-r-4 border-primary' : 'text-on-surface-variant'} hover:bg-surface-container-low transition-all rounded-lg`}>
               <span className="material-symbols-outlined text-[20px]">reorder</span> Projects
             </Link>
