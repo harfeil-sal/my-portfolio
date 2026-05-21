@@ -14,7 +14,7 @@ export default function Projects() {
       image: "/srxaffinity.png",
       active: true,
       type: "Android",
-      downloadUrl: "https://github.com/harfeil-sal/my-portfolio/releases/latest/download/app-release.zip",
+      downloadUrl: "https://github.com/harfeil-sal/my-portfolio/releases/latest/download/SRxAffinity.apk",
       id: "01"
     },
     {
@@ -24,6 +24,7 @@ export default function Projects() {
       image: "/srxassist.png",
       active: true,
       type: "Android",
+      downloadUrl: "https://github.com/harfeil-sal/my-portfolio/releases/latest/download/SRxAssist.apk",
       id: "02"
     },
     {
@@ -33,6 +34,7 @@ export default function Projects() {
       image: "/srxlogistics.png",
       active: true,
       type: "Android",
+      downloadUrl: "https://github.com/harfeil-sal/my-portfolio/releases/latest/download/SRxLogistics.apk",
       id: "03"
     },
     {
@@ -42,7 +44,26 @@ export default function Projects() {
       image: "/myrx.png",
       active: true,
       type: "Android",
+      downloadUrl: "https://github.com/harfeil-sal/my-portfolio/releases/latest/download/MyRx.apk",
       id: "04"
+    },
+    {
+      title: "(Project) Subdivision Mapping System",
+      desc: "A full-stack web application for visualizing and managing residential lots in Deca Homes Minglanilla, Cebu. Features interactive map views, lot status tracking, and an admin interface for managing subdivision data in real time.",
+      tags: ["MongoDB", "Express", "React", "Node.js", "TypeScript"],
+      image: "/myrx.png",
+      active: false,
+      type: "None",
+      id: "05"
+    },
+    {
+      title: "(Capstone Project) Centralized Library Management System ",
+      desc: "A web-based library platform built for Sr. Cecilia's College Inc. that centralizes book cataloging, borrowing records, and inventory tracking. Designed to simplify day-to-day library operations for both librarians and students.",
+      tags: ["Django", "React.js", "MySQL"],
+      image: "/myrx.png",
+      active: false,
+      type: "None",
+      id: "06"
     },
     // {
     //   title: "Geo-Traffic Engine",

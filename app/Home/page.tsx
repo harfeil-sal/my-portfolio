@@ -18,23 +18,23 @@ const featuredProjects = [
   },
   {
     id: '02',
-    title: 'SRxAssist',
+    title: 'Subdivision Mapping',
     description:
-      'Mobile pharmacy operations platform with real-time access to workflows and facility data. Integrates directly with the SRx system to streamline daily pharmacy operations and enable responsive service through instant mobile access.',
-    tags: ['React Native', '.NET', 'Sybase'],
+      'Full-stack web app for visualizing and managing residential lots in Deca Homes Minglanilla, Cebu. Built with the MERN stack and TypeScript, featuring interactive map views, lot status tracking, and a real-time admin interface.',
+    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'TypeScript'],
     demo: '#',
     github: '#',
-    status: 'Live',
+    status: '',
   },
   {
     id: '03',
-    title: 'SRxLogistics',
+    title: 'CLM System',
     description:
-      'Mobile inventory management app using barcode scanning to track drug supplies in real time. Built to improve stock accuracy and streamline logistics across pharmacy operations.',
-    tags: ['React Native', '.NET', 'Sybase'],
+      'Centralized Library Management System built for Sr. Cecilia\'s College Inc. Integrated Arduino barcode scanning and RFID-based entry monitoring, implemented the Dewey Decimal System for book classification, and deployed on DigitalOcean via Docker and Coolify.',
+    tags: ['Django', 'React.js', 'MySQL', 'Docker'],
     demo: '#',
     github: '#',
-    status: 'Live',
+    status: '',
   },
 ];
 
@@ -44,15 +44,15 @@ const skills = [
     title: 'Frontend Development',
     icon: 'code',
     tags: [
-      { name: 'React.js', level: 5 },
-      { name: 'Next.js', level: 5 },
+      { name: 'React.js', level: 4 },
+      { name: 'Next.js', level: 4 },
       { name: 'TypeScript', level: 4 },
-      { name: 'Tailwind CSS', level: 5 },
-      { name: 'JavaScript', level: 5 },
+      { name: 'Tailwind CSS', level: 4 },
+      { name: 'JavaScript', level: 4 },
       { name: 'React Native', level: 4 },
       { name: 'Vue.js', level: 3 },
-      { name: 'HTML', level: 5 },
-      { name: 'CSS', level: 5 },
+      { name: 'HTML', level: 4 },
+      { name: 'CSS', level: 4 },
     ],
   },
   {
@@ -76,7 +76,7 @@ const skills = [
     title: 'Development Tools',
     icon: 'build',
     tags: [
-      { name: 'Git / GitHub', level: 5 },
+      { name: 'Git / GitHub', level: 4 },
       { name: 'Docker', level: 3 },
       { name: 'Figma', level: 4 },
       { name: 'Postman', level: 5 },
@@ -85,6 +85,8 @@ const skills = [
       { name: 'Expo', level: 4 },
       { name: 'Redis', level: 3 },
       { name: 'Claude Code', level: 4 },
+      { name: 'Arduino', level: 3 },
+      { name: 'ChatGTP', level: 4 },
     ],
   },
 ];
@@ -123,7 +125,9 @@ export default function Home() {
               create resilient, reliable, and scalable <span className="text-primary italic">software solutions.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-              Junior Full-Stack Engineer specializing in high-performance distributed systems, cloud-native architecture, and crafting fluid user experiences with technical precision.
+            Based in Cebu, PH. I build full-stack web and mobile applications
+            with a focus on performance and maintainability. Currently open to
+            remote roles and interesting collaborations.
             </p>
             <div className="flex gap-4 mt-10">
               <Link href="/Projects" className="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:brightness-110 transition-all shadow-xl shadow-primary/20">
@@ -197,7 +201,8 @@ export default function Home() {
                   {/* Header row */}
                   <div className="flex justify-between items-start mb-6">
                     <span className="text-[10px] font-mono text-on-surface-variant">{project.id}</span>
-                    <span
+                    {project.status == "Live" ? (
+                      <span
                       className={`px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest border ${
                         project.status === 'Live'
                           ? 'border-secondary/40 text-secondary bg-secondary/10'
@@ -206,6 +211,7 @@ export default function Home() {
                     >
                       {project.status}
                     </span>
+                    ) : ""}
                   </div>
 
                   {/* Title */}
