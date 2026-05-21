@@ -54,6 +54,7 @@ export default function Projects() {
       image: "/myrx.png",
       active: false,
       type: "None",
+      githubLink: "https://github.com/Harfeil/mapping",
       id: "05"
     },
     {
@@ -63,6 +64,7 @@ export default function Projects() {
       image: "/myrx.png",
       active: false,
       type: "None",
+      
       id: "06"
     },
     // {
@@ -229,6 +231,11 @@ export default function Projects() {
                       rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
                       <span className="material-symbols-outlined text-sm">{project.type == "Android" ? "download" : "open_in_new"}</span> {project.type == "Android" ? "Download APK" : "View Website"}
                     </a>
+                    )}
+                    {project.githubLink && (
+                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
+                        <span className="material-symbols-outlined text-sm">code</span> Source Code
+                      </a>
                     )}
                   </div> 
                 </div>
