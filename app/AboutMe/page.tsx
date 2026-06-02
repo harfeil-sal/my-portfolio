@@ -79,11 +79,9 @@ export default function About() {
                   <span className="text-on-surface">cat profile.txt</span>
                 </div>
                 <div className="text-on-surface-variant max-w-xl">
-                With around 2 years of hands-on experience in full-stack engineering,
-                I've grown from building simple CRUD apps to architecting distributed
-                systems and cloud-native solutions. My curiosity for how data flows
-                across the stack led me deep into both frontend frameworks and backend
-                infrastructure.
+                Software Developer with 2 years of experience turning ideas into 
+                working products. I care about clean architecture, solid performance, 
+                and code that the next developer will actually thank me for.
                 </div>
                 <div className="text-on-surface-variant max-w-xl">
                 Today, I focus on building high-performance platforms that are clean
