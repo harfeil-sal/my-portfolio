@@ -89,6 +89,17 @@ const skills = [
       { name: 'ChatGTP', level: 4 },
     ],
   },
+  {
+    id: '04',
+    title: 'No Code / Low Code Development',
+    icon: 'settings',
+    tags: [
+      { name: 'Bubble', level: 3 },
+      { name: 'Airtable', level: 3 },
+      { name: 'Glide', level: 3 },
+      { name: 'Retool', level: 3 }
+    ],
+  },
 ];
 
 // Dot rating component

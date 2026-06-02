@@ -45,7 +45,7 @@ export default function Contact() {
 
   const systemNodes = [
     { name: 'GitHub', icon: 'code', href: 'https://github.com/Harfeil' },
-    { name: 'LinkedIn', icon: 'account_tree', href: 'https://linkedin.com/in/' },
+    { name: 'LinkedIn', icon: 'account_tree', href: 'https://ph.linkedin.com/in/harfeil-salmeron-959358377' },
     { name: 'Email Me Direct', icon: 'mail', href: 'mailto:harfeil.gequillo.salmeron@gmail.com' },
   ];
 

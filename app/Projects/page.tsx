@@ -64,9 +64,37 @@ export default function Projects() {
       image: "/myrx.png",
       active: false,
       type: "None",
-      
       id: "06"
     },
+    {
+      title: "Event Management System",
+      desc: "A comprehensive mobile application designed to streamline event planning, attendee registration, and participant management. The platform enables organizers to efficiently manage events, track registrations, monitor attendance, and enhance attendee engagement through a centralized and user-friendly interface.",
+      tags: ["Glide", "Airtable"],
+      image: "/eventmanagement.png",
+      active: false,
+      type: "None",
+      id: "06"
+    },
+    {
+      title: "Task Management System",
+      desc: "A comprehensive web application that helps organizations manage tasks, projects, and team workloads efficiently. Features include task assignment, status tracking, deadline management, progress reporting, and collaborative workspaces to streamline project execution and improve operational productivity.",
+      tags: ["Bubble", "Airtable"],
+      image: "/bubble.png",
+      active: false,
+      type: "website",
+      websiteUrl: "https://harfeilgequillosalmeron.bubbleapps.io/version-test?debug_mode=true",
+      id: "07"
+    },
+    {
+      title: "CRM System",
+      desc: "A comprehensive customer relationship management system that helps organizations manage customer information, interactions, and sales opportunities efficiently. Features include customer profile management, contact tracking, sales pipeline monitoring, and reporting tools to improve customer engagement and sales performance.",
+      tags: ["Retool", "MongoDB"],
+      image: "/retool.png",
+      active: false,
+      type: "website",
+      websiteUrl: "https://hsals--customer-management-tool.retool.app/",
+      id: "08"
+    }
     // {
     //   title: "Geo-Traffic Engine",
     //   desc: "Real-time geospatial processing engine for urban planning simulations and traffic flow optimization in smart city initiatives.",
@@ -224,7 +252,9 @@ export default function Projects() {
                     </button> */}
                     {project.type === "None" ? (
                       <button className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all">
-                    </button>) : (
+                    </button>) : project.type === "website" ?(
+                      <a href={project.websiteUrl || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-primary hover:brightness-125 transition-all"><span className="material-symbols-outlined text-sm">open_in_new</span>View Website</a>
+                    ) : (
                       <a href={project.downloadUrl || "#"}
                       target="_blank"
                       download 
