@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import ChatbotWidget from '../Chatbot/Chatbot';
 
 export default function TopNavigation({activePage}: {activePage: string}) {
 
@@ -9,6 +10,7 @@ export default function TopNavigation({activePage}: {activePage: string}) {
 
     return (
         <div className="fixed top-0 w-full z-50">
+            
           {/* Top bar */}
           <nav className="bg-surface/70 backdrop-blur-xl border-b border-white/10">
             <div className="flex justify-between items-center px-6 md:px-12 py-4 max-w-[1440px] mx-auto">
@@ -65,6 +67,9 @@ export default function TopNavigation({activePage}: {activePage: string}) {
               <a href="/Resume" onClick={() => setIsMobileMenuOpen(false)} className="w-full bg-primary text-on-primary py-3 rounded-lg font-bold block text-center mt-2">Resume</a>
             </div>
           )}
+          
+          <ChatbotWidget />
         </div>
+        
     )
 }

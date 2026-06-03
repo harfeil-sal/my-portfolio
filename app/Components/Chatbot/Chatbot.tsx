@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 
 type Message = { id: string; role: "user" | "assistant"; content: string; timestamp: Date; };
-const suggestedPrompts = ["What are your core skills?","Tell me about your projects","Are you open to remote work?","What stack do you use?"];
+const suggestedPrompts = ["What are your core skills?","Tell me about your projects","Are you open to remote jobs?","What stack do you use?"];
 
 export default function ChatbotWidget() {
   const [mounted, setMounted] = useState(false);
@@ -24,10 +24,10 @@ export default function ChatbotWidget() {
     await new Promise((r) => setTimeout(r, 1200 + Math.random() * 800));
     const lower = text.toLowerCase();
     let reply = "Great question! Feel free to explore the Projects and Experience sections, or reach out via the Contact form.";
-    if (lower.includes("skill") || lower.includes("tech") || lower.includes("stack")) reply = "My go-to stack: Next.js + TypeScript, Node.js / Laravel, MySQL / MongoDB, and Tailwind CSS. Also React Native for mobile.";
-    else if (lower.includes("project") || lower.includes("work") || lower.includes("built")) reply = "Recent highlights: SRxAffinity (pharmacy analytics), Subdivision Mapping app, and CLM System for Sr. Cecilia's College!";
+    if (lower.includes("skill") || lower.includes("tech") || lower.includes("stack")) reply = "My go-to stack: Next.js + TypeScript, Node.js / Laravel, MySQL / MongoDB, and Tailwind CSS. Also React Native for mobile. I have a list of my Core Infrastructure Technologies in the Home section.";
+    else if (lower.includes("project") || lower.includes("work") || lower.includes("built")) reply = "Recent highlights: SRxAffinity (pharmacy analytics), Subdivision Mapping app, and CLM System for Sr. Cecilia's College. I build Mobile and Web applications for clients and businesses.";
     else if (lower.includes("remote") || lower.includes("available") || lower.includes("hire")) reply = "Yes — available for remote roles. Based in Cebu, PH (UTC+8) but I adapt to client time zones.";
-    else if (lower.includes("experience") || lower.includes("background")) reply = "Full-stack dev — React, Next.js, Node.js, React Native, MySQL, MongoDB, Docker, and cloud deployments.";
+    else if (lower.includes("experience") || lower.includes("background")) reply = "Creating web and mobile applications for clients and businesses. I am full stack developer with expertise in React, Next.js, Node.js, React Native, MySQL, MongoDB, Docker, and cloud deployments.";
     setIsTyping(false);
     setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), role: "assistant", content: reply, timestamp: new Date() }]);
   };

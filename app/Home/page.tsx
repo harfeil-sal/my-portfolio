@@ -5,7 +5,6 @@ import Image from 'next/image';
 import TopNavigation from '../Components/Navigations/TopNavigation';
 import SideNavigation from '../Components/Navigations/SideNavigation';
 import Footer from '../Components/Footer/Footer';
-import ChatbotWidget from '../Components/Chatbot/Chatbot';
 
 const featuredProjects = [
   {
@@ -259,7 +258,6 @@ export default function Home() {
       
       
       <Footer />
-      <ChatbotWidget />
     </div>
   );
 }
