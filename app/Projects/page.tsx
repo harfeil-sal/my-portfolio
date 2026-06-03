@@ -73,7 +73,7 @@ export default function Projects() {
       image: "/eventmanagement.png",
       active: false,
       type: "None",
-      id: "06"
+      id: "07"
     },
     {
       title: "Task Management System",
@@ -83,7 +83,7 @@ export default function Projects() {
       active: false,
       type: "website",
       websiteUrl: "https://harfeilgequillosalmeron.bubbleapps.io/version-test?debug_mode=true",
-      id: "07"
+      id: "08"
     },
     {
       title: "CRM System",
@@ -93,7 +93,7 @@ export default function Projects() {
       active: false,
       type: "website",
       websiteUrl: "https://hsals--customer-management-tool.retool.app/",
-      id: "08"
+      id: "09"
     }
     // {
     //   title: "Geo-Traffic Engine",
