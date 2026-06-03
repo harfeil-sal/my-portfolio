@@ -16,7 +16,7 @@ export default function SideNavigation({activePage}: {activePage: string}) {
             </div>
             <div>
               <h3 className="font-bold text-on-surface">Jr. Software Developer</h3>
-              <p className="text-[10px] font-mono text-on-surface-variant tracking-wider">v3.1.0-stable</p>
+              <p className="text-[10px] font-mono text-on-surface-variant tracking-wider">v1.9.0-stable</p>
             </div>
           </div>
           
