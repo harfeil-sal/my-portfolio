@@ -1,9 +1,11 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import TopNavigation from '../Components/Navigations/TopNavigation';
 import SideNavigation from '../Components/Navigations/SideNavigation';
 import Footer from '../Components/Footer/Footer';
+import ChatbotWidget from '../Components/Chatbot/Chatbot';
 
 const featuredProjects = [
   {
@@ -131,6 +133,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-bright/50 border border-outline-variant/30 text-[10px] font-mono text-secondary mb-6 uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" /> Available for new opportunities
             </div>
+            
             <h1 className="text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
               Hi, I'm <span className="text-secondary">Harfeil Salmeron.</span> I <br />
               create resilient, reliable, and scalable <span className="text-primary italic">software solutions.</span>
@@ -152,6 +155,7 @@ export default function Home() {
               </button>
             </div>
           </header>
+
 
           {/* Core Infrastructure */}
           <section className="space-y-12 mb-20">
@@ -252,8 +256,10 @@ export default function Home() {
           </section>
         </main>
       </div>
-
+      
+      
       <Footer />
+      <ChatbotWidget />
     </div>
   );
 }
